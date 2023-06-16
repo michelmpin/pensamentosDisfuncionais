@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt=br">
+  <head class="row">
+    <title>Registro de Pensamentos Disfuncionais</title>
+    <!-- Flaticon designed by Cyberpunk, downloaded from flaticon.com -->
+    <link rel="icon" type="image/x-icon" href="/image/favicon.ico" />
+    <script src="index.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+
+    <header>
+      <h1>Registro de Pensamentos Disfuncionais</h1>
+
+      <nav id="menu">
+        <input
+          type="checkbox"
+          id="responsive-menu"
+          onclick="updatemenu()"
+        /><label></label>
+        <ul>
+          <li>
+            <a href="#registros">Registros</a>
+          </li>
+          <li>
+            <a href="#sobre" class="dropdown-arrow">Sobre</a>
+            <ul class="sub-menus">
+              <li>
+                <a href="#sobre">Registro de Pensamentos Disfuncionais</a>
+              </li>
+              <li><a href="#sobre-ferramenta">Ferramenta</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#campos" class="dropdown-arrow">Campos</a>
+            <ul class="sub-menus">
+              <li><a href="#campos-data">Data</a></li>
+              <li><a href="#campos-situacao">Situação Ativadora</a></li>
+              <li><a href="#campos-pensamentos">Pensamentos Automáticos</a></li>
+              <li><a href="#campos-senti">O que senti</a></li>
+              <li><a href="#campos-fiz">O que fiz</a></li>
+              <li><a href="#campos-crencas">Crenças Disfuncionais</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <form id="registroForm">
+        <section class="row">
+          <section class="col-half">
+            <h4><label for="data">Data:</label></h4>
+            <input type="date" id="data" name="data" required /><br />
+          </section>
+        </section>
+        <section class="row">
+          <h4><label for="situacao">A - Situação Ativadora:</label></h4>
+          <textarea
+            id="situacao"
+            name="situacao"
+            rows="4"
+            cols="50"
+            required
+          ></textarea>
+        </section>
+        <section class="row">
+          <h4>
+            <label for="pensamentos">B - Pensamentos automáticos:</label>
+          </h4>
+          <textarea
+            id="pensamentos"
+            name="pensamentos"
+            rows="4"
+            cols="50"
+            required
+          ></textarea>
+        </section>
+        <section class="row">
+          <h4>C - Consequências</h4>
+          <section class="col-half">
+            <label for="emocoes">O que senti:</label>
+            <input type="text" id="emocoes" name="emocoes" required /><br />
+          </section>
+          <section class="col-half">
+            <label for="consequencias">O que fiz:</label>
+            <input
+              type="text"
+              id="consequencias"
+              name="consequencias"
+              required
+            />
+          </section>
+        </section>
+        <section class="row">
+          <h4><label for="crencas">Crenças Disfuncionais:</label></h4>
+          <input type="text" id="crencas" name="crencas" required /><br />
+        </section>
+        <br />
+        <button class="button-pattern" type="submit">Registrar</button>
+      </form>
+      <br />
+      <section class="actions">
+        <button id="imprimir" class="button-pattern">Imprimir Tabela</button>
+        <button id="limpar" class="button-pattern">Limpar Registros</button>
+        <div class="false-button tooltip">
+          Pdf
+          <span class="tooltiptext"
+            >Para exportar em pdf, clique em "Imprimir Tabela" e escolha sua
+            impressora virtual de pdf</span
+          >
+        </div>
+      </section>
+      <br />
+      <section id="registros">
+        <table id="tabelaRegistros" class="orangePaleRows">
+          <thead>
+            <tr>
+              <th class="table-header-date">Data</th>
+              <th>Situação</th>
+              <th>Pensamentos</th>
+              <th>O que senti</th>
+              <th>O que fiz</th>
+              <th>Crenças Disfuncionais</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </section>
+      <section class="artigos">
+        <article id="sobre">
+          <h2>Sobre o Registro de Pensamentos Disfuncionais</h2>
+          <p>
+            O Registro de Pensamento Disfuncional é uma técnica usada em terapia
+            cognitivo-comportamental para ajudar as pessoas a identificarem e
+            desafiarem seus padrões de pensamento negativos ou distorcidos. Essa
+            técnica envolve a anotação dos pensamentos disfuncionais que ocorrem
+            em determinadas situações, bem como as emoções associadas a eles.
+          </p>
+          <img
+            src="https://static.wixstatic.com/media/f2f7d8_4f6247c04ed94482b94b6bc551e3b87a~mv2.png/v1/crop/x_1,y_0,w_639,h_384/fill/w_560,h_336,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/terapia-cognitivo-comportamental-640x384.png"
+            alt="Pensamentos difuncionais"
+          />
+          <img
+            src="https://falcoericci.files.wordpress.com/2015/09/ideia.png?w=1086"
+            alt="caminho disfuncional"
+          />
+          <p>
+            O objetivo do Registro de Pensamento Disfuncional é auxiliar os
+            indivíduos a reconhecerem que seus pensamentos podem estar
+            distorcendo a realidade e afetando negativamente suas emoções e
+            comportamentos. Ao registrar esses pensamentos, as pessoas são
+            encorajadas a examiná-los de forma mais objetiva e realista,
+            buscando evidências para apoiar ou refutar esses pensamentos
+            disfuncionais.
+          </p>
+          <p>
+            Uma vez que os pensamentos disfuncionais sejam identificados e
+            desafiados, é possível substituí-los por pensamentos mais
+            adaptativos e realistas. Essa técnica ajuda as pessoas a ganharem
+            uma perspectiva mais equilibrada e a lidarem de maneira mais eficaz
+            com os desafios e problemas que enfrentam. É importante ressaltar
+            que o Registro de Pensamento Disfuncional é frequentemente realizado
+            com o auxílio de um terapeuta ou profissional de saúde mental
+            qualificado.
+          </p>
+          <img
+            src="https://images.sympla.com.br/5d1faa8d18505.png"
+            alt="cérebro colorido"
+          />
+        </article>
+        <section id="campos">
+          <article>
+            <h2>Campos do Registro</h2>
+            <section id="campos-data">
+              <h3>Data</h3>
+              <p>
+                Identifique o dia em que foi perturbado por uma obsessão ou em que
+                foi compelido a realizar um ritual.
+              </p>
+            </section>
+            <section id="campos-situacao">
+              <h3>Situação Ativadora</h3>
+              <p>
+                Em que situação, local ou momento foi perturbado por algum
+                pensamento negativo ou catastrófico ou imagem desagradável?
+              </p>
+            </section>
+            <section id="campos-pensamentos">
+              <h3>Pensamentos Automáticos</h3>
+              <p>
+                O que passou pela minha cabeça naquele momento (medo de
+                contaminação, de acontecer uma desgraça, falhar)? 
+                <br>As respostas a essa questão são seus pensamentos automáticos.
+              </p>
+            </section>
+            <section id="campos-senti">
+              <h3>O que senti</h3>
+              <p>O que sentiu na ocasião (medo, nojo, aflição, culpa)?</p>
+            </section>
+            <section id="campos-fiz">
+              <h3>O que fiz</h3>
+              <p>
+                O que você foi levado a fazer para se livrar do desconforto ou do
+                medo (ritual, evitação, ritual mental)? 
+                <br>Se cedeu ao impulso de
+                realizar o ritual ou de evitar o contato?
+              </p>
+            </section>
+            <section id="campos-crencas">
+              <h3>Crenças Disfuncionais</h3>
+              <p>
+                De acordo com o viés abordado pela TCC, as crenças são entendimentos que carregamos e geralmente não somos capazes de questioná-los, muitas vezes por percebê-los como uma verdade absoluta.
+                <br>Exemplos para o caso de TOC: exagerar o risco, exagerar a responsabilidade, perfeccionismo.
+              </p>
+            </section>
+          </article>
+        </section>
+        <article id="sobre-ferramenta">
+          <h2>Sobre Esta Ferramenta</h2>
+          <img
+            class="right"
+            src="https://definicion.de/wp-content/uploads/2016/05/browser.png"
+            alt="browser icons"
+          />
+          <p>
+            Esta página faz o registro faz uso do LocalStorage do browser, ou
+            seja, dependendo da máquina e do browser que estiver utilizando os
+            registros que vão aparecer serão baseados nos registros deste
+            browser nesta máquina que está utilizando.
+          </p>
+          <p>
+            A Ferramenta foi desenvolvida desta forma para que não gerasse
+            custos ao desenvolvedor, permitindo seu uso sem qualquer tipo de
+            cobrança para o usuário.
+          </p>
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/4465/4465596.png"
+            alt="corte de custos"
+          />
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/1965/1965773.png"
+            alt="coworking"
+          />
+          <p>
+            Caso queira colaborar com a Ferramenta, envie um push request para o
+            github do desenvolvedor
+            <a
+              href="https://github.com/michelmpin/pensamentosDisfuncionais"
+              target="_blank"
+              title="Github"
+              style="color: black"
+            >
+              Clicando aqui <i class="fa fa-github"></i></a
+            >.
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <hr />
+      Implementado por MPin Solutions<i
+        class="fa fa-copyright"
+        role="copyright"
+      ></i>
+    </footer>
+
+  </body>
+</html>
