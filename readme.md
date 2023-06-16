@@ -43,4 +43,4 @@ Contribuições são bem-vindas! Se você encontrar algum problema, tiver alguma
 
 ## Licença
 
-Este projeto está licenciado sob a [MIT License](LICENSE).
+Este projeto está licenciado sob a [MIT License](https://github.com/git/git-scm.com/blob/main/MIT-LICENSE.txt).
