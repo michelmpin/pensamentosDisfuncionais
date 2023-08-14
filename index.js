@@ -43,10 +43,10 @@ document.getElementById("imprimir").addEventListener("click", function () {
   printWindow.document.write("</body></html>");
   printWindow.document.close();
   setTimeout(()=>{
-    printWindow.print()
+    printWindow.print();
     printWindow.close();
   }
-    ,500);
+    ,1000);
 });
 
 // Evento do botão para exportar em PDF
