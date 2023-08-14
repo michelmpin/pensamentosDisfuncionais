@@ -27,6 +27,7 @@ document
     registros.push(novoRegistro);
     localStorage.setItem("registros", JSON.stringify(registros));
     novaLinhaNaTabela(tabela, novoRegistro, registros.length - 1);
+    console.log(registros);
 
     limpaForm();
   });
@@ -52,13 +53,17 @@ document.getElementById("imprimir").addEventListener("click", function () {
 // Evento do botão para exportar em PDF
 document.getElementById("limpar").addEventListener("click", function () {
   localStorage.setItem("registros", JSON.stringify([]));
+  limpaVisualizacaoTabela();
+});
+
+function limpaVisualizacaoTabela() {
   const tableHeaderRowCount = 1;
   const table = document.getElementById("tabelaRegistros");
   const rowCount = table.rows.length;
   for (let i = tableHeaderRowCount; i < rowCount; i++) {
     table.deleteRow(tableHeaderRowCount);
   }
-});
+}
 
 function limpaForm() {
   document.getElementById("data").value = "";
@@ -71,9 +76,11 @@ function limpaForm() {
 
 function excluirLinha(botao) {
   const tabela = document.getElementById("tabelaRegistros");
-  // const registros = JSON.parse(localStorage.getItem("registros"));
-  const linha = botao.parentNode.parentNode;
-  tabela.deleteRow(linha.rowIndex);
+  const registros = JSON.parse(localStorage.getItem("registros"));
+  registros.splice(Number(botao.getAttribute("data-id")),1);
+  localStorage.setItem("registros", JSON.stringify(registros));
+  limpaVisualizacaoTabela();
+  carregarRegistros();
 }
 
 // Função para carregar os registros salvos localmente na tabela
@@ -83,7 +90,7 @@ function carregarRegistros() {
 
   for (let i = 0; i < registros.length; i++) {
     const registro = registros[i];
-    novaLinhaNaTabela(tabela, registro);
+    novaLinhaNaTabela(tabela, registro, i);
   }
 }
 
